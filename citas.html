@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avances - TigreVet</title>
+  <link rel="stylesheet" href="calendar.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./menu.css" />
+  <link rel="stylesheet" href="./modal.css" />
+
+</head>
+<style>
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #28a745;
+  }
+
+  .date-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin: 20px auto;
+    max-width: 400px; 
+  }
+  .nav-button {
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+  #calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #calendar-header div {
+    flex: 1;
+    text-align: center;
+  }
+</style>
+
+<body>
+  <header>
+    <nav>
+      <div class="contenedor-logo">
+        <img src="images/logo-blanco.png" width="100px" alt="" />
+        <div class="logo">
+          <h1>TigreVet</h1>
+        </div>
+      </div>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="citas.html">Turnos</a></li>
+        <li><a href="recursos.html">Recursos Educativos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="#">Métodos de Pago</a></li>
+        <li><a href="index.html">Avances</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Utiliza nuestra gestión de Reserva de Citas Online</h2>
+    <div class="date-selector">
+      <span class="nav-button" id="prev-month">&lt;</span>
+      <div id="month-year"></div>
+      <span class="nav-button" id="next-month">&gt;</span>
+    </div>
+    <div id="calendar-header">
+    <div>L</div>
+    <div>M</div>
+    <div>M</div>
+    <div>J</div>
+    <div>V</div>
+    <div>S</div>
+    <div>D</div>
+    </div>
+    <div id="calendar">
+
+    </div>
+    <!-- Modal -->
+<div id="timeSlotsModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Selecciona una hora</h2>
+    <div id="time-slots"></div>
+  </div>
+</div>
+    <div id="booking-form">
+      <h2>Reserva</h2>
+      <form id="reserveForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" required>
+
+        <label for="date">Fecha:</label>
+        <input type="text" id="date" placeholder="Seleccione una fecha y horario" disabled>
+
+        <button class="btn disabled" id="btn-reservar" type="submit">Reservar</button>
+      </form>
+      <p id="confirmation" class="hidden"></p>
+    </div>
+   
+
+  </main>
+
+  <footer>
+    <p>TigreVet - Todos los derechos reservados © 2024</p>
+  </footer>
+  <button id="scrollToTopBtn" class="scrollToTopBtn">↑</button>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./inicio.js"></script>
+  <script src="./calendario.js"></script>
+</body>
+
+</html>

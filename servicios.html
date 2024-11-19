@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avances - TigreVet</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./menu.css" />
+    <style>
+      .container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+      }
+      .service {
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          margin: 10px;
+          padding: 15px;
+          width: calc(50% - 20px); 
+      }
+      img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            display: block; 
+            margin: 0 auto; 
+        }
+
+      h2 {
+            margin: 10px 0; 
+            text-align: center; 
+        }
+  </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="contenedor-logo">
+          <img src="images/logo-blanco.png" width="100px" alt="" />
+          <div class="logo">
+            <h1>TigreVet</h1>
+          </div>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="citas.html">Turnos</a></li>
+          <li><a href="recursos.html">Recursos Educativos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="#">Métodos de Pago</a></li>
+          <li><a href="index.html">Avances</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h3>Nuestros Servicios</h3>
+            <p>
+              En esta sección te mostramos los diferentes servicios que brindamos en TigreVet
+            </p>
+          </section>
+          <div class="container">
+            <div class="service">
+                <img src="images/consulta.jpg" alt="Consulta Veterinaria">
+                <h2>Consulta Veterinaria</h2>
+                <p>Ofrecemos consultas completas para el diagnóstico y tratamiento de enfermedades en tus mascotas.</p>
+            </div>
+    
+            <div class="service">
+                <img src="images/vacunas.jpg" alt="Vacunación">
+                <h2>Vacunación</h2>
+                <p>Mantén a tus mascotas protegidas con nuestro servicio de vacunación, que incluye todas las vacunas necesarias.</p>
+            </div>
+    
+            <div class="service">
+                <img src="images/baños.jpg" alt="Baño y Acicalamiento">
+                <h2>Baño y Acicalamiento</h2>
+                <p>Brindamos servicios de baño y acicalamiento para que tus mascotas luzcan y se sientan bien.</p>
+            </div>
+    
+            <div class="service">
+                <img src="images/emergencias.jpg" alt="Emergencias">
+                <h2>Emergencias</h2>
+                <p>Contamos con atención de emergencias para situaciones críticas, disponible 24/7.</p>
+            </div>
+        </div>
+      </main>
+  
+      <footer>
+        <p>TigreVet - Todos los derechos reservados © 2024</p>
+      </footer>
+      <button id="scrollToTopBtn" class="scrollToTopBtn">↑</button>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="./inicio.js"></script>
+    </body>
+  </html>

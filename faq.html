@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avances - TigreVet</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./menu.css" />
+  </head>
+  <style>
+        h1 {
+            text-align: center;
+            margin-bottom: 60px;
+            margin: auto;
+        }
+        .faq {
+            margin: 20px auto;
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            max-width: 600px;
+            text-align: center; 
+        }
+        .faq h2 {
+            cursor: pointer;
+            color: green; 
+            margin-top: 50px;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+        }
+</style>
+
+  <body>
+    <header>
+      <nav>
+        <div class="contenedor-logo">
+          <img src="images/logo-blanco.png" width="100px" alt="" />
+          <div class="logo">
+            <h1>TigreVet</h1>
+          </div>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="citas.html">Turnos</a></li>
+          <li><a href="recursos.html">Recursos Educativos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="#">Métodos de Pago</a></li>
+          <li><a href="index.html">Avances</a></li>
+        </ul>
+      </nav>
+    </header>
+    <body>
+
+        <h1><strong>Preguntas Frecuentes</strong></h1>
+
+        <div class="faq">
+            <h2 onclick="toggleAnswer(this)">¿Qué servicios ofrece la veterinaria?</h2>
+            <div class="answer">
+                <p>Ofrecemos consultas generales, vacunación, cirugía, atención de urgencias, y servicios de peluquería.</p>
+            </div>
+        </div>
+    
+        <div class="faq">
+            <h2 onclick="toggleAnswer(this)">¿Cuál es el horario de atención?</h2>
+            <div class="answer">
+                <p>Nuestro horario de consultas es de lunes a viernes de 9:00 a 18:00 y sábados de 9:00 a 13:00. <strong>Para emergencias contamos con disponibilidad 24/7.</strong></p>
+            </div>
+        </div>
+    
+        <div class="faq">
+            <h2 onclick="toggleAnswer(this)">¿Cómo puedo pedir una cita?</h2>
+            <div class="answer">
+                <p>Puedes llamarnos al número de contacto o reservar una cita a través de nuestra página web.</p>
+            </div>
+        </div>
+    
+        <div class="faq">
+            <h2 onclick="toggleAnswer(this)">¿Qué debo llevar a la consulta?</h2>
+            <div class="answer">
+                <p>Te recomendamos traer el historial médico de tu mascota y cualquier medicamento que esté tomando.</p>
+            </div>
+        </div>
+    
+        <script>
+            function toggleAnswer(element) {
+                const answer = element.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            }
+        </script>
+
+    <footer>
+      <p>TigreVet - Todos los derechos reservados © 2024</p>
+    </footer>
+    <button id="scrollToTopBtn" class="scrollToTopBtn">↑</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./inicio.js"></script>
+  </body>
+</html>

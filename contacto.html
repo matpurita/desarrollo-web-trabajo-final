@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avances - TigreVet</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./menu.css" />
+  </head>
+  <style>
+
+.contact-info, .contact-form {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #28a745; 
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838; 
+}
+
+.hidden {
+    display: none;
+}
+  </style>
+  <body>
+    <header>
+      <nav>
+        <div class="contenedor-logo">
+          <img src="images/logo-blanco.png" width="100px" alt="" />
+          <div class="logo">
+            <h1>TigreVet</h1>
+          </div>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="citas.html">Turnos</a></li>
+          <li><a href="recursos.html">Recursos Educativos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="#">Métodos de Pago</a></li>
+          <li><a href="index.html">Avances</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <section class="contact-info">
+            <h2>Datos de Contacto</h2>
+            <p><strong>Teléfono:</strong> (011) 4566-7458</p>
+            <p><strong>Email:</strong> tigrevet@gmail.com</p>
+            <p><strong>Dirección:</strong> Avenida Sarmiento 6558, Nordelta</p>
+        </section>
+
+        <section class="contact-form">
+            <h2>Envíanos un Mensaje</h2>
+            <form id="contactForm">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="confirmation" class="hidden"></p>
+        </section>
+    </main>
+
+    <footer>
+      <p>TigreVet - Todos los derechos reservados © 2024</p>
+    </footer>
+    <button id="scrollToTopBtn" class="scrollToTopBtn">↑</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./inicio.js"></script>
+  </body>
+</html>

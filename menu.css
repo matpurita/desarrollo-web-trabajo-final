@@ -1,0 +1,59 @@
+/* Estilos para el menú hamburguesa */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    margin-right: 0.7rem;
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    margin-bottom: 4px;
+    border-radius: 3px;
+  }
+  
+  @media (max-width: 985px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    nav {
+      padding-left: 1rem;
+        padding-right: 0.5rem;
+    }
+
+    main {
+      padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+  
+    nav ul {
+      
+      flex-direction: column;
+      width: 100%;
+      background: #333;
+      position: absolute;
+      top: 150px;
+      left: 0;
+      opacity: 0;
+        
+    }
+  
+    nav ul li {
+      text-align: center;
+      padding: 10px 0;
+    }
+  
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+  
+    nav ul.show {
+      display: flex;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+  }
