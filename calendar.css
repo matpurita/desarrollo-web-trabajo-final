@@ -119,15 +119,21 @@
 }
 
 #calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    margin: 20px auto;
-    max-width: 400px; 
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 400px; 
+     
+}
+
+#calendar div {
+  text-align: center;
+  font-weight: bold;
 }
 
 .day {
-    padding: 10px;
+    padding: 3px;
     text-align: center;
     background-color: #ffffff;
     border: 2px solid #28a745; 
@@ -213,9 +219,25 @@ button:hover {
 }
 
 .time-slot.reserved {
-  background-color: #ffcccc;
+  background-color: #44c69f;
+  cursor: not-allowed;
+  color: #656565;
+}
+
+.time-slot.notAvailable {
+  background-color: #d0cdcd;
   cursor: not-allowed;
   text-decoration: line-through;
   color: #aaa;
+}
+
+.cancel-btn {
+  margin-left: 10px;
+  background-color: rgb(213, 91, 91);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
 }
 

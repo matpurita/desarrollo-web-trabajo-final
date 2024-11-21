@@ -14,7 +14,7 @@ function getReservasFromLocalStorage() {
   const reservas = JSON.parse(sessionStorage.getItem('reservas')) || [];
   console.log('reservas', reservas);
   arrayReservedDates = reservas;
-  console.log(arrayReservedDates);
+  loadBookingsToHtml()
 }
 
 //guardar la reserva en localsession
@@ -36,15 +36,29 @@ function validateDateHourReserve() {
   
   if (arrayReservedDates.length > 0) {
     arrayReservedDates.forEach((item) => {
-      const [dia, mes, anio] = selectedDate.toLocaleDateString().split('/').map(Number);
+      const [dia, mes, anio] = item.date.split('/').map(Number);
       const fechaLocal = new Date(anio, mes - 1, dia);
       if (fechaLocal.toLocaleDateString() == selectedDate.toLocaleDateString() && item.hour == selectedHour) {
-        alert('No se puede reservar en una fecha ya reservada');
         return false;
       }
     });
   }
   return true;
+}
+
+function validateReserve(selectedDate, index) {
+    if (arrayReservedDates.length > 0) {
+        for (let i = 0; i < arrayReservedDates.length; i++) {
+            const item = arrayReservedDates[i];
+            const [dia, mes, anio] = item.date.split('/').map(Number);
+            const fechaLocal = new Date(anio, mes - 1, dia);
+            console.log(fechaLocal.toLocaleDateString(), selectedDate.toLocaleDateString(), item.hour, index);
+            if (fechaLocal.toLocaleDateString() == selectedDate.toLocaleDateString() && item.hour == index) {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 //cargar la reserva en localsession
@@ -54,10 +68,26 @@ function loadBookingsToHtml() {
   bookingList.innerHTML = '';
   bookings.forEach((booking, index) => {
     const bookingElement = document.createElement('li');
-    bookingElement.textContent = `${booking.name} - ${booking.date} - ${booking.time}`;
+    bookingElement.textContent = `${booking.name} - ${booking.date} - ${booking.hour}:00hs`;
+
+    const cancelButton = document.createElement('button');
+    cancelButton.textContent = 'Cancelar';
+    cancelButton.classList.add('cancel-btn');
+    cancelButton.addEventListener('click', () => {
+      cancelBooking(index);
+    });
+
+    bookingElement.appendChild(cancelButton);
     bookingList.appendChild(bookingElement);
   });
 }
+
+function cancelBooking(index) {
+    let bookings = JSON.parse(sessionStorage.getItem('reservas')) || [];
+    bookings.splice(index, 1);
+    sessionStorage.setItem('reservas', JSON.stringify(bookings));
+    getReservasFromLocalStorage();
+  }
 
 function removeAllSelected() {
     console.log('removeAllSelected');
@@ -79,7 +109,7 @@ function generateTimeSlots() {
 
   for (let i = 9; i <= 18; i++) {
     const timeSlot = document.createElement('div');
-    timeSlot.textContent = `${i}:00`;
+    timeSlot.textContent = `${i}:00hs`;
     timeSlot.classList.add('time-slot');
     // Marcar las 9:00 como reservada
     if (
@@ -87,7 +117,10 @@ function generateTimeSlots() {
       selectedDate.getDate() === currentDate.getDate() &&
       i <= currentDate.getHours()
     ) {
+      timeSlot.classList.add('notAvailable');
+    } else if( !validateReserve(selectedDate, i)){
       timeSlot.classList.add('reserved');
+      timeSlot.textContent = `${i}:00hs - Reservado`;
     } else {
       timeSlot.addEventListener('click', function () {
         selectTimeSlot(i);
@@ -118,7 +151,7 @@ function selectTimeSlot(hour) {
   const timeSlots = document.querySelectorAll('.time-slot');
   timeSlots[hour - 9].classList.add('selected');
   dateInput.value =
-    selectedDate.toLocaleDateString() + ' ' + selectedHour + ':00';
+    selectedDate.toLocaleDateString() + ' ' + selectedHour + ':00hs';
   const modal = document.getElementById('timeSlotsModal');
   modal.style.display = 'none';
   const button = document.getElementById('btn-reservar');
@@ -271,3 +304,4 @@ document.getElementById('next-month').addEventListener('click', function () {
 
 getReservasFromLocalStorage();
 generateCalendar(actualYear, actualMonth); // Generar el calendario del mes actual
+loadBookingsToHtml()
