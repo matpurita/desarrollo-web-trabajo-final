@@ -13,6 +13,10 @@
     margin-bottom: 4px;
     border-radius: 3px;
   }
+
+  nav li.active {
+    color: #ffeb3b;
+  }
   
   @media (max-width: 985px) {
     .menu-toggle {

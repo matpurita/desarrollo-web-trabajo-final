@@ -23,7 +23,7 @@ header .logo h1 {
   font-size: 2em;
 }
 
-.contenedor-logo{
+.contenedor-logo,.contenedor-logo a{
   display: flex;
   align-items: center;
   justify-content: center;
