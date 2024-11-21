@@ -231,3 +231,10 @@ button.btn.disabled {
 .scrollToTopBtn:hover {
   background-color: #218838;
 }
+
+label.error {
+  color: red;
+  font-size: 0.8em;
+  display: block;
+  margin-top: 5px;
+}
