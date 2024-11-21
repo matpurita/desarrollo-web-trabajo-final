@@ -4,56 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Descubre los servicios de TigreVet, como consultas veterinarias, vacunación, baño y acicalamiento, y atención de emergencias. Todo lo que necesitas para el cuidado de tus mascotas en un solo lugar.">
+  <meta name="description" content="Descubre los servicios de TigreVet, como consultas veterinarias, vacunación, cuidado e higiene, y atención de emergencias. Todo lo que necesitas para el cuidado de tus mascotas en un solo lugar.">
   <title>Servicios - TigreVet</title>
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./menu.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
   <link rel="icon" href="./images/logo-verde-principal.ico" type="image/x-icon">
-  <style>
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    .service {
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      margin: 10px;
-      padding: 15px;
-      width: calc(50% - 20px);
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    h2 {
-      margin: 10px 0;
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
   <header>
     <nav>
       <div class="contenedor-logo">
-        <a href="./"><img src="images/logo-blanco.png" width="100px" alt="" />
+        <a href="./"><img src="images/logo-blanco.png" width="80px" alt="TigreVet Logo" />
           <div class="logo">
-            <h1>TigreVet</h1>
+            <h1 class="logo-text">TigreVet</h1>
           </div>
         </a>
-      </div>
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
       </div>
       <ul id="menu">
         <li><a href="index.html">Inicio</a></li>
@@ -63,43 +29,46 @@
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="faq.html">FAQ</a></li>
-        <li><a href="#">Métodos de Pago</a></li>
-
       </ul>
     </nav>
   </header>
 
   <main>
+    <!-- Introducción -->
     <section class="intro">
       <h3>Nuestros Servicios</h3>
       <p>
-        En esta sección te mostramos los diferentes servicios que brindamos en TigreVet
+        En TigreVet, nos enorgullecemos de ofrecer una atención integral para tu mascota. Cada uno de nuestros servicios está diseñado pensando en su salud, bienestar y calidad de vida. Desde consultas preventivas hasta emergencias, nuestro objetivo es garantizar que tu mascota reciba el cuidado que merece en un ambiente confiable y cálido.
+      </p>
+      <p>
+        Con más de una década de experiencia, nuestro equipo de veterinarios está altamente capacitado para diagnosticar, prevenir y tratar cualquier condición. Además, te guiamos para que puedas tomar decisiones informadas sobre su cuidado en cada etapa de su vida.
       </p>
     </section>
+
+    <!-- Servicios -->
     <div class="container">
       <div class="service">
-        <img src="images/consulta.jpg" alt="Consulta Veterinaria">
+        <img src="images/consulta.jpg" alt="Consulta Veterinaria" />
         <h2>Consulta Veterinaria</h2>
-        <p>Ofrecemos consultas completas para el diagnóstico y tratamiento de enfermedades en tus mascotas.</p>
+        <p>Ofrecemos evaluaciones completas y diagnósticos precisos para garantizar que tu mascota reciba el tratamiento adecuado para sus necesidades específicas.</p>
       </div>
 
       <div class="service">
-        <img src="images/vacunas.jpg" alt="Vacunación">
+        <img src="images/vacunas.jpg" alt="Vacunación" />
         <h2>Vacunación</h2>
-        <p>Mantén a tus mascotas protegidas con nuestro servicio de vacunación, que incluye todas las vacunas
-          necesarias.</p>
+        <p>Mantenemos a tu mascota protegida con un calendario de vacunación personalizado. Prevenir es cuidar, y nosotros nos encargamos de que esté siempre saludable.</p>
       </div>
 
       <div class="service">
-        <img src="images/baños.jpg" alt="Baño y Acicalamiento">
-        <h2>Baño y Acicalamiento</h2>
-        <p>Brindamos servicios de baño y acicalamiento para que tus mascotas luzcan y se sientan bien.</p>
+        <img src="images/baños.jpg" alt="Cuidado e Higiene" />
+        <h2>Cuidado e Higiene</h2>
+        <p>Ofrecemos servicios de baño y estética para que tu mascota no solo se sienta bien, sino que también luzca impecable y saludable.</p>
       </div>
 
       <div class="service">
-        <img src="images/emergencias.jpg" alt="Emergencias">
+        <img src="images/emergencias.jpg" alt="Emergencias" />
         <h2>Emergencias</h2>
-        <p>Contamos con atención de emergencias para situaciones críticas, disponible 24/7.</p>
+        <p>Estamos disponibles las 24 horas del día, los 7 días de la semana, para atender cualquier situación crítica. Porque tu tranquilidad es nuestra prioridad.</p>
       </div>
     </div>
   </main>
@@ -107,9 +76,8 @@
   <footer>
     <p>TigreVet - Todos los derechos reservados © 2024</p>
   </footer>
-<button id="scrollToTopBtn" class="scrollToTopBtn" aria-label="Volver al inicio">↑</button>
+  <button id="scrollToTopBtn" class="scrollToTopBtn" aria-label="Volver al inicio">↑</button>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="./inicio.js"></script>
 </body>
 
 </html>
