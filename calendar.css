@@ -40,13 +40,22 @@
   section h2 {
     color: #2e8b57;
     margin-bottom: 15px;
-    font-size: 1.8em;
+    
+  }
+
+  h2 {
+    font-size:1.8rem
+  }
+
+  h3 {
+    font-size:1.5rem;
+    color: #388e3c;
+    margin-bottom: 10px;
   }
   
   section h3 {
     color: #388e3c;
     margin-bottom: 10px;
-    font-size: 1.5em;
   }
   
   section p,
@@ -175,6 +184,14 @@ input[type="text"] {
     border-radius: 4px;
 }
 
+input[type="email"] {
+  width: calc(100% - 22px); 
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 button {
     margin-top: 15px;
     padding: 10px 15px;
@@ -239,5 +256,16 @@ button:hover {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 3px;
+}
+
+#confirmation {
+  margin-top: 20px;
+  font-weight: bold;
+  background-color: #d4edda; /* Fondo verde claro */
+  color: #155724; /* Texto verde oscuro */
+  padding: 15px;
+  border: 1px solid #c3e6cb; /* Borde verde claro */
+  border-radius: 5px;
+  text-align: center;
 }
 

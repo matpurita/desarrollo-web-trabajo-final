@@ -20,10 +20,11 @@ function getReservasFromLocalStorage() {
 //guardar la reserva en localsession
 function saveBooking() {
   const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
   const date = selectedDate.toLocaleDateString();
   const hour = selectedHour;
 
-  const booking = { name, date, hour };
+  const booking = { name, email, date, hour };
   if (!validateDateHourReserve(selectedDate, hour)) {
     return;
   }
@@ -68,7 +69,7 @@ function loadBookingsToHtml() {
   bookingList.innerHTML = '';
   bookings.forEach((booking, index) => {
     const bookingElement = document.createElement('li');
-    bookingElement.textContent = `${booking.name} - ${booking.date} - ${booking.hour}:00hs`;
+    bookingElement.textContent = `${booking.name} - ${booking.email} - ${booking.date} - ${booking.hour}:00hs`;
 
     const cancelButton = document.createElement('button');
     cancelButton.textContent = 'Cancelar';
@@ -194,7 +195,7 @@ function generateCalendar(year, month) {
     const dayDate = new Date(year, month, i);
     const today = new Date();
 
-    if (dayDate.getDate() < today.getDate()) {
+    if (dayDate.getDate() < today.getDate() || dayDate.getMonth() < today.getMonth()) {
       dayDiv.style.backgroundColor = '#f0f0f0'; // Día pasado
       dayDiv.style.cursor = 'not-allowed'; // Desactivar el clic
       dayDiv.onclick = null; // Desactivar el clic
@@ -250,6 +251,7 @@ document
     }
 
     const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
     const date = selectedDate.toLocaleDateString();
 
     confirmationMessage.textContent = `Reserva realizada para ${name} el ${date} a las ${selectedHour}:00.`;

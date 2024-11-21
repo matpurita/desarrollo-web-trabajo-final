@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reserva citas online en TigreVet. Elige fecha y horario fácilmente para el cuidado de tus mascotas. Atención profesional en emergencias y servicios veterinarios.">
+  <meta name="description"
+    content="Reserva citas online en TigreVet. Elige fecha y horario fácilmente para el cuidado de tus mascotas. Atención profesional en emergencias y servicios veterinarios.">
   <title>Turnos - TigreVet</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
   <link rel="stylesheet" href="./calendar.css" />
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./menu.css" />
   <link rel="stylesheet" href="./modal.css" />
-  
+
   <link rel="icon" href="./images/logo-verde-principal.ico" type="image/x-icon">
 
 </head>
@@ -28,17 +29,20 @@
     align-items: center;
     margin-bottom: 10px;
     margin: 20px auto;
-    max-width: 400px; 
+    max-width: 400px;
   }
+
   .nav-button {
     cursor: pointer;
     font-size: 1.5em;
   }
+
   #calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   #calendar-header div {
     flex: 1;
     text-align: center;
@@ -69,57 +73,77 @@
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="#">Métodos de Pago</a></li>
-        
+
       </ul>
     </nav>
   </header>
   <main>
+
     <h2>Utiliza nuestra gestión de Reserva de Citas Online</h2>
-    <div class="date-selector">
-      <span class="nav-button" id="prev-month">&lt;</span>
-      <div id="month-year"></div>
-      <span class="nav-button" id="next-month">&gt;</span>
+    <div class="flex flex-col justify-center items-center">
+      <h3>Reserva tu turno</h3>
+      <p>Selecciona una fecha y horario en el calendario para reservar tu turno.</p>
+      <p>Si deseas cancelar tu turno, haz clic en la fecha y horario seleccionado.</p>
+      <p>Si deseas modificar tu turno, cancela el turno y selecciona una nueva fecha y horario.</p>
     </div>
-    <div id="calendar-header">
-    <div>L</div>
-    <div>M</div>
-    <div>M</div>
-    <div>J</div>
-    <div>V</div>
-    <div>S</div>
-    <div>D</div>
-    </div>
-    <div id="calendar">
+    <div class="flex flex-wrap">
+      <div class="w-full md:w-1/2 p-4">
+        <div class="date-selector">
+          <span class="nav-button" id="prev-month">&lt;</span>
+          <div id="month-year"></div>
+          <span class="nav-button" id="next-month">&gt;</span>
+        </div>
+        <div id="calendar-header">
+          <div>L</div>
+          <div>M</div>
+          <div>M</div>
+          <div>J</div>
+          <div>V</div>
+          <div>S</div>
+          <div>D</div>
+        </div>
+        <div id="calendar">
 
-    </div>
-    <!-- Modal -->
-<div id="timeSlotsModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Selecciona una hora</h2>
-    <div id="time-slots"></div>
-  </div>
-</div>
-    <div id="booking-form">
-      <h2>Reserva</h2>
-      <form id="reserveForm">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" required>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 p-4">
+
+        <div id="booking-form">
+          <h2>Reserva</h2>
+          <form id="reserveForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="date">Fecha:</label>
+            <input type="text" id="date" placeholder="Seleccione una fecha y horario" disabled>
+
+            <button class="btn disabled" id="btn-reservar" type="submit">Reservar</button>
+          </form>
+        </div>
+
+      </div>
 
 
-        <label for="date">Fecha:</label>
-        <input type="text" id="date" placeholder="Seleccione una fecha y horario" disabled>
 
-        <button class="btn disabled" id="btn-reservar" type="submit">Reservar</button>
-      </form>
-      <p id="confirmation" class="hidden"></p>
+      <div class="w-full flex flex-col items-center">
+        <div id="confirmation" class="hidden"></div>
         <ul id="booking-list"></ul>
+      </div>
     </div>
-   
 
+
+    <!-- Modal -->
+    <div id="timeSlotsModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Selecciona una hora</h2>
+        <div id="time-slots"></div>
+      </div>
+    </div>
   </main>
 
-  <footer>
+  <footer class="mt-8">
     <p>TigreVet - Todos los derechos reservados © 2024</p>
   </footer>
   <button id="scrollToTopBtn" class="scrollToTopBtn" aria-label="Volver al inicio">↑</button>
