@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avances - TigreVet</title>
+    <meta name="description" content="Ponte en contacto con TigreVet. Llámanos, envíanos un email o utiliza el formulario para resolver tus dudas sobre el cuidado de tus mascotas.">
+    <title>Contacto - TigreVet</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./menu.css" />
-  <link rel="icon" href="./images/logo-verde-principal.png" type="image/x-icon">
+  <link rel="icon" href="./images/logo-verde-principal.ico" type="image/x-icon">
   </head>
   <style>
 
@@ -75,7 +76,7 @@ button:hover {
           <li><a href="citas.html">Turnos</a></li>
           <li><a href="recursos.html">Recursos Educativos</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li class="active" >Contacto</li>
+          <li class="active"><a href="contacto.html">Contacto</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="#">Métodos de Pago</a></li>
           
@@ -91,28 +92,28 @@ button:hover {
             <p><strong>Dirección:</strong> Avenida Sarmiento 6558, Nordelta</p>
         </section>
 
-        <section class="contact-form">
-            <h2>Envíanos un Mensaje</h2>
-            <form id="contactForm">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
+         <section class="contact-form">
+        <h2>Envíanos un Mensaje</h2>
+        <form id="contactForm">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required aria-label="Ingrese su nombre completo">
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required aria-label="Ingrese su dirección de correo electrónico">
 
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" rows="5" required aria-label="Escriba su mensaje"></textarea>
 
-                <button type="submit">Enviar</button>
-            </form>
-            <p id="confirmation" class="hidden"></p>
-        </section>
+          <button type="submit">Enviar</button>
+        </form>
+        <p id="confirmation" class="hidden"></p>
+      </section>
     </main>
 
     <footer>
       <p>TigreVet - Todos los derechos reservados © 2024</p>
     </footer>
-    <button id="scrollToTopBtn" class="scrollToTopBtn">↑</button>
+   <button id="scrollToTopBtn" class="scrollToTopBtn" aria-label="Volver al inicio">↑</button>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./inicio.js"></script>
   </body>
